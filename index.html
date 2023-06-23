@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kursy walut</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kursy walut</h1>
+        <div class="row">
+            <div class="column">
+                <label for="currency-select">Wybierz walutę:</label>
+                <select id="currency-select">
+                    <option value="USD">Dolar amerykański (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="GBP">Funt brytyjski (GBP)</option>
+                    <option value="CHF">Frank szwajcarski (CHF)</option>
+                    <option value="JPY">Jen japoński (JPY)</option>
+                    <option value="CAD">Dolar kanadyjski (CAD)</option>
+                    <option value="AUD">Dolar australijski (AUD)</option>
+                    <option value="BRL">Real brazylijski (BRL)</option>
+                    <option value="CNY">Juan chiński (CNY)</option>
+                    <option value="SEK">Korona szwedzka (SEK)</option>
+                    <option value="NZD">Dolar nowozelandzki (NZD)</option>
+                </select>
+            </div>
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Waluta</th>
+                            <th>Kurs</th>
+                        </tr>
+                    </thead>
+                    <tbody id="currency-table">
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/usd.png" alt="Flaga USA">Dolar amerykański (USD)
+                            </td>
+                            <td id="USD-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/euro.png" alt="Flaga UE">Euro (EUR)
+                            </td>
+                            <td id="EUR-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/gbp.png" alt="Flaga UK">Funt brytyjski (GBP)
+                            </td>
+                            <td id="GBP-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/chf.png" alt="Flaga Szwajcarii">Frank szwajcarski (CHF)
+                            </td>
+                            <td id="CHF-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/jpy.png" alt="Flaga Japonii">Jen japoński (JPY)
+                            </td>
+                            <td id="JPY-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/cad.png" alt="Flaga Kanady">Dolar kanadyjski (CAD)
+                            </td>
+                            <td id="CAD-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/aud.png" alt="Flaga Australii">Dolar australijski (AUD)
+                            </td>
+                            <td id="AUD-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/brl.png" alt="Flaga Brazylii">Real brazylijski (BRL)
+                            </td>
+                            <td id="BRL-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/cny.png" alt="Flaga Chin">Juan chiński (CNY)
+                            </td>
+                            <td id="CNY-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/sek.png" alt="Flaga Szwecji">Korona szwedzka (SEK)
+                            </td>
+                            <td id="SEK-rate"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="flag" src="flags/nzd.png" alt="Flaga Nowej Zelandii">Dolar nowozelandzki
+                                (NZD)
+                            </td>
+                            <td id="NZD-rate"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="chart-container" style="display:none;">
+            <canvas id="chart"></canvas>
+        </div>
+        <form>
+            <label class="label-form" for="pln">Wpisz kwotę PLN:</label>
+            <input type="number" id="pln" name="pln">
+            <label class="label-form" for="currency">Wybierz walutę:</label>
+            <select id="currency">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="CHF">CHF</option>
+                <option value="JPY">JPY</option>
+                <option value="CAD">CAD</option>
+                <option value="AUD">AUD</option>
+                <option value="BRL">BRL</option>
+                <option value="CNY">CNY</option>
+                <option value="SEK">SEK</option>
+                <option value="NZD">NZD</option>
+            </select>
+            <button type="button" onclick="exchange()">Wymień</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
